@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "Inria Sans";
+    src: url("InriaSans/InriaSans-Regular.eot");
+    src: url("InriaSans/InriaSans-Regular.eot?#iefix") format("embedded-opentype"), url("InriaSans/InriaSans-Regular.woff2") format("woff2"), url("InriaSans/InriaSans-Regular.woff") format("woff"),
+        url("InriaSans/InriaSans-Regular.svg") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inria Sans";
+    src: url("InriaSans/InriaSans-Bold.eot");
+    src: url("InriaSans/InriaSans-Bold.eot?#iefix") format("embedded-opentype"), url("InriaSans/InriaSans-Bold.woff2") format("woff2"), url("InriaSans/InriaSans-Bold.woff") format("woff"),
+        url("InriaSans/InriaSans-Bold.svg") format("svg");
+    font-weight: 700;
+    font-style: normal;
+}
+body {
+    font-family: "Inria Sans", sans-serif;
+    padding: 2rem;
+}
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+li {
+    margin-bottom: 0.3rem;
+}
+.bold {
+    font-weight: bold;
+}
+.column {
+    max-width: 400px;
+    padding-right: 1rem;
+}
+.column > section {
+    margin-bottom: 2rem;
+}
+.past-events, .past-events a {
+    color: #999
+}
+.bl {
+    border-left: 5px solid #4d55afff;
+    padding-left: .5rem;
+}
+.flex {
+    display: flex;
+}
+.hor-center {
+    justify-content: center;
+}
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.logo {
+    height: 10rem;
+    margin-right: 2rem;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.purple-border {
+    border: 2px solid #9841a6ff;
+    padding: 0 1rem;
+}
