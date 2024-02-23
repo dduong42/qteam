@@ -51,6 +51,13 @@
             .column > section {
                 margin-bottom: 2rem;
             }
+            .past-events, .past-events a {
+                color: #aaa
+            }
+            .bl {
+                border-left: 5px solid #4d55afff;
+                padding-left: .5rem;
+            }
         </style>
     </head>
     <body>
@@ -59,14 +66,14 @@
                 <header style="display: flex; align-items: center; margin-bottom: 1rem;">
                     <img style="height: 10rem; margin-right: 2rem;" src="qteam.svg" alt="The Q-Team" />
                     <section>
-                        <h1>A cappella queer choir from Brussels</h1>
+                        <h1 style="text-transform: uppercase;">A cappella queer choir from Brussels</h1>
                         <p>Music from movies, series, anime, video games and more&hellip;</p>
                     </section>
                 </header>
                 <div style="display: flex; flex-wrap: wrap;">
                     <div class="column">
                         <section>
-                            <h2>About us</h2>
+                            <h2 class="bl">About us</h2>
                             <p>
                                 The Q-Team is a young queer vocal ensemble from Brussels, dedicated to the a cappella interpretation of music from pop/geek/nerd culture, particularly those with a connection to films, series, video games,
                                 cartoons or social networks.
@@ -80,19 +87,23 @@
                                 choir, in Paris in 2010. She also directed the Brussels choirs Zinnechoeur (2018-2020) and Tapalanote (2018-2023), before launching the project of a geek and queer vocal ensemble in August 2023: the Q-Team.
                             </p>
                         </section>
-                        <section>
+                        <section style="border: 2px solid #9841a6ff; padding: 0 1rem;">
                             <h2>Calendar</h2>
+                            <section>
                             <h3>Future events</h3>
                             <ul>
                                 <li><span class="bold">29/06/2024:</span> Concert with Negitachi and Pop’cornala (Paris)</li>
                             </ul>
+                            </section>
+                            <section class="past-events" style="color: #999">
                             <h3>Past events</h3>
                             <ul>
                                 <li><span class="bold">27/01/2024:</span> <a href="https://www.pianofabriek.be/fr/not-new-years-arty">This is Not a New Year's Arty</a> - Pianofabriek (Saint-Gilles)</li>
                             </ul>
+                            </section>
                         </section>
                         <section>
-                            <h2>Contact</h2>
+                            <h2 class="bl">Contact</h2>
                             <nav>
                                 <ul>
                                     <li><span class="bold">Facebook:</span> <a href="https://www.facebook.com/theqteamchoir">The Q-Team</a></li>
@@ -103,7 +114,7 @@
                         </section>
                     </div>
                     <div class="column">
-                        <h2>Join us</h2>
+                        <h2 class="bl">Join us</h2>
                         <p>Recruitment takes place all year round, so it's still possible to join us!</p>
                         <h3>When and where do you rehearse?</h3>
                         <p>
