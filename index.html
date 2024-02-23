@@ -40,11 +40,6 @@ body {
 	margin: auto;
 	max-width: 1000px;
 }
-.logo {
-	height: 10rem;
-	margin: 0 auto 2rem auto;
-	display: block;
-}
 ul {
 	padding: 0;
 	list-style-type: none;
@@ -52,35 +47,30 @@ ul {
 li {
 	margin-bottom: .3rem;
 }
-section {
-	margin-bottom: 2rem;
-}
 .bold {
 	font-weight: bold;
 }
-.hero {
-	text-align: center;
-
-}
-.content {
-	display: flex;
-	flex-wrap: wrap;
-	
-}
-.content > section {
+.column {
 	max-width: 400px;
+	padding-right: 1rem;
+}
+.column > section {
+	margin-bottom: 2rem;
 }
 </style>
 </head>
 <body>
-<img class="logo" src="qteam.svg" alt="The Q-Team">
-<section class="hero">
-	<h1>A cappella queer choir from Brussels</h1>
-	<p>Music from movies, series, anime, video games and more&hellip;</p>
-</section>
-<section style="display: flex; justify-content: center">
-<div class="content">
-	<section style="margin-right: 1rem;">
+<div style="display: flex; justify-content: center;">
+<div>
+<header style="display: flex; align-items: center; margin-bottom: 1rem;">
+    <img style="height: 10rem; margin-right: 2rem;" src="qteam.svg" alt="The Q-Team">
+    <section>
+        <h1>A cappella queer choir from Brussels</h1>
+        <p>Music from movies, series, anime, video games and more&hellip;</p>
+    </section>
+</header>
+<div style="display: flex; flex-wrap: wrap;">
+	<section class="column">
 		<section>
 			<h2>About us</h2>
 			<p>The Q-Team is a young queer vocal ensemble from Brussels, dedicated to the a cappella interpretation of music from pop/geek/nerd culture, particularly those with a connection to films, series, video games, cartoons or social networks.</p>
@@ -103,19 +93,18 @@ section {
 		</li>
 			</ul>
 		</section>
-
-<section>
-	<h2>Contact</h2>
-	<nav>
-		<ul>
-			<li><span class="bold">Facebook:</span> <a href="https://www.facebook.com/theqteamchoir">The Q-Team</a></li>
-			<li><span class="bold">Instagram:</span> <a href="https://www.instagram.com/theqteamchoir/">@theqteamchoir</a></li>
-			<li><span class="bold">Email:</span> <a href="mailto:contact@theqteam.be">contact@theqteam.be</a></li>
-		</ul>
-	</nav>
-</section>
+        <section>
+            <h2>Contact</h2>
+            <nav>
+                <ul>
+                    <li><span class="bold">Facebook:</span> <a href="https://www.facebook.com/theqteamchoir">The Q-Team</a></li>
+                    <li><span class="bold">Instagram:</span> <a href="https://www.instagram.com/theqteamchoir/">@theqteamchoir</a></li>
+                    <li><span class="bold">Email:</span> <a href="mailto:contact@theqteam.be">contact@theqteam.be</a></li>
+                </ul>
+            </nav>
+        </section>
 	</section>
-	<section>
+	<section class="column">
 		<h2>Join us</h2>
 		<p>Recruitment takes place all year round, so it's still possible to join us!</p>
 		<h3>When and where do you rehearse?</h3>
@@ -130,6 +119,7 @@ section {
 		<p>Each member of the choir pays a membership fee to cover our costs (rental of the rehearsal room, remuneration of the musical director, writing of arrangements, etc.). The membership fee is 250€ for the year, 175€ from January onwards, and 90€ for a quarter.</p>
 	</section>
 </div>
-</section>
+<div>
+</div>
 </body>
 </html>
