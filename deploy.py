@@ -22,4 +22,6 @@ with open(os.path.join(os.environ["HOME"], ".qteam")) as f1:
     with ThreadPoolExecutor() as executor:
         executor.submit(deploy, "index.html")
         executor.submit(deploy, "en.html")
+        executor.submit(deploy, "menu.html")
+        executor.submit(deploy, "menu-en.html")
         executor.submit(deploy, "styles.css")
