@@ -51,8 +51,10 @@ ul {
 .hor-center {
     justify-content: center;
 }
+.ver-center {
+    align-items: center;
+}
 .social-logo {
-    height: 1rem;
     vertical-align: top;
 }
 .header {
@@ -84,7 +86,10 @@ ul {
 .purple {
     color: #9841a6ff;
 }
-@media (max-width: 700px) {
+@media (max-width: 730px) {
+    .social-logo {
+        height: 1.4rem;
+    }
     .hide-mobile {
         display: none;
     }
@@ -95,8 +100,17 @@ ul {
         position: relative;
         top: -45px;
     }
+    .menu {
+        justify-content: space-between;
+    }
 }
-@media (min-width: 700px) {
+@media (min-width: 730px) {
+    .social-logo {
+        height: 1rem;
+    }
+    .hide-desktop {
+        display: none;
+    }
     .menu-button {
         display: none;
     }
@@ -110,7 +124,7 @@ ul {
 }
 .menu {
     background-color: #9841a6ff;
-    padding: .7rem;
+    padding: .7rem 2rem;
     position: sticky;
     top: 0;
 }
@@ -119,7 +133,6 @@ ul {
     border: 1.4px solid #fff;
     border-radius: 10px;
     padding: .5rem;
-    margin: .5rem 0 0 2rem;
 }
 .purple-button {
     background-color: #9841a6ff;
