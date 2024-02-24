@@ -25,3 +25,5 @@ with open(os.path.join(os.environ["HOME"], ".qteam")) as f1:
         executor.submit(deploy, "menu.html")
         executor.submit(deploy, "menu-en.html")
         executor.submit(deploy, "styles.css")
+        executor.submit(deploy, "instagram.svg")
+        executor.submit(deploy, "facebook.svg")
