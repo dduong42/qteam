@@ -87,6 +87,10 @@ ul {
     .menu-button {
         display: inline-block;
     }
+    .anchor {
+        position: relative;
+        top: -45px;
+    }
 }
 @media (min-width: 500px) {
     .menu-button {
@@ -94,6 +98,10 @@ ul {
     }
     .menu {
         justify-content: center;
+    }
+    .anchor {
+        position: relative;
+        top: -20px;
     }
 }
 .menu {
