@@ -16,13 +16,16 @@
 }
 body {
     font-family: "Inria Sans", sans-serif;
+    margin: 0;
+}
+.p-2 {
     padding: 2rem;
 }
 ul {
     padding: 0;
     list-style-type: none;
 }
-li {
+.main li {
     margin-bottom: 0.3rem;
 }
 .bold {
@@ -53,6 +56,10 @@ li {
     align-items: center;
     margin-bottom: 1rem;
 }
+.logo-menu {
+    height: 10rem;
+    margin-top: 1rem;
+}
 .logo {
     height: 10rem;
     margin-right: 2rem;
@@ -69,4 +76,69 @@ li {
 }
 .blue {
     color: #4d55afff;
+}
+.purple {
+    color: #9841a6ff;
+}
+@media (max-width: 500px) {
+    .hide-mobile {
+        display: none;
+    }
+    .menu-button {
+        display: inline-block;
+    }
+}
+@media (min-width: 500px) {
+    .menu-button {
+        display: none;
+    }
+    .menu {
+        justify-content: center;
+    }
+}
+.menu {
+    background-color: #9841a6ff;
+    padding: .7rem;
+    position: sticky;
+    top: 0;
+}
+.menu-button {
+    text-decoration: none;
+    border: 1.4px solid #fff;
+    border-radius: 10px;
+    padding: .5rem;
+    margin: .5rem 0 0 2rem;
+}
+.purple-button {
+    background-color: #9841a6ff;
+    border-radius: 10px;
+    padding: .8rem;
+    text-align: center;
+}
+.purple-button a {
+    color: #fff;
+}
+.purple-button:not(:last-child){
+    margin-bottom: .5rem;
+}
+.menu ul {
+    margin: 0;
+}
+.menu li:not(:last-child) {
+    margin-right: 1rem;
+}
+.menu a {
+    color: #fff;
+}
+.no-underline {
+    text-decoration: none;
+}
+.underline {
+    text-decoration: underline;
+}
+.margin-auto {
+    margin: auto;
+}
+.flex-column {
+    flex-direction: column;
 }
