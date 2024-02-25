@@ -1,4 +1,4 @@
-To deploy `src/index.html`:
+To deploy:
 
 1. Store your credentials in ~/.qteam
 ```
