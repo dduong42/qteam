@@ -127,11 +127,13 @@ ul {
 }
 .menu {
     padding: .7rem 2rem;
-    position: sticky;
-    top: 0;
     justify-content: space-between;
     max-width: 830px;
     margin: auto;
+}
+.sticky {
+    position: sticky;
+    top: 0;
 }
 .menu-button {
     text-decoration: none;
