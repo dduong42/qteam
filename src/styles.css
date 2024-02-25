@@ -109,9 +109,6 @@ ul {
         position: relative;
         top: -45px;
     }
-    .menu {
-        justify-content: space-between;
-    }
 }
 @media (min-width: 730px) {
     .social-logo {
@@ -123,25 +120,27 @@ ul {
     .menu-button {
         display: none;
     }
-    .menu {
-        justify-content: center;
-    }
     .anchor {
         position: relative;
         top: -20px;
     }
 }
 .menu {
-    background-color: #9841a6ff;
     padding: .7rem 2rem;
     position: sticky;
     top: 0;
+    justify-content: space-between;
+    max-width: 830px;
+    margin: auto;
 }
 .menu-button {
     text-decoration: none;
     border: 1.4px solid #fff;
     border-radius: 10px;
     padding: .5rem;
+}
+.purple-background {
+    background-color: #9841a6ff;
 }
 .purple-button {
     background-color: #9841a6ff;
