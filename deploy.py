@@ -2,9 +2,7 @@
 """
 Upload index.html to using the FTP server.
 """
-from concurrent.futures import ThreadPoolExecutor
-from ftplib import FTP
-
+import ftplib
 import os
 import os.path
 
@@ -14,16 +12,26 @@ with open(os.path.join(os.environ["HOME"], ".qteam")) as f1:
     user = f1.readline()[:-1]
     password = f1.readline()[:-1]
 
-    def deploy(path: str):
-        with FTP(host, user, password) as ftp, open(path, "rb") as f2:
-            ftp.cwd("www")
-            ftp.storbinary(f"STOR {path}", f2)
+    with ftplib.FTP(host, user, password) as ftp:
+        ftp.set_debuglevel(1)
+        ftp.cwd("www")
 
-    with ThreadPoolExecutor() as executor:
-        executor.submit(deploy, "index.html")
-        executor.submit(deploy, "en.html")
-        executor.submit(deploy, "menu.html")
-        executor.submit(deploy, "menu-en.html")
-        executor.submit(deploy, "styles.css")
-        executor.submit(deploy, "instagram.svg")
-        executor.submit(deploy, "facebook.svg")
+        def deploy():
+            for entry in os.scandir("."):
+                if entry.is_dir():
+                    try:
+                        ftp.cwd(entry.name)
+                    except ftplib.error_perm as reason:
+                        if str(reason)[:3] == '550':
+                            ftp.mkd(entry.name)
+                            ftp.cwd(entry.name)
+                        else:
+                            raise
+                    os.chdir(entry.name)
+                    deploy()
+                    os.chdir("..")
+                    ftp.cwd("..")
+                else:
+                    with open(entry.name, "rb") as f2:
+                        ftp.storbinary(f"STOR {entry.name}", f2)
+        deploy()
