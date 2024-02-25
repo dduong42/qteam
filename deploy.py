@@ -26,46 +26,25 @@ except FileExistsError:
         password = f.readline()[:-1]
 
 
-def cd(ftp: ftplib.FTP, path: str):
-    dirs = path.split(os.sep)
-    for d in dirs:
-        try:
-            ftp.cwd(d)
-        except ftplib.error_perm as reason:
-            if str(reason)[:3] == '550':
-                ftp.mkd(d)
-                ftp.cwd(d)
-            else:
-                raise
-
-
-def mkdir(path: str):
-    with ftplib.FTP(host, user, password) as ftp:
-        ftp.set_debuglevel(1)
-        head, tail = os.path.split(path)
-        cd(ftp, head)
-        try:
-            ftp.mkd(tail)
-        except ftplib.error_perm as reason:
-            if str(reason)[:3] != '550':
-                raise
-
-
 def put(path: str):
     with ftplib.FTP(host, user, password) as ftp:
         ftp.set_debuglevel(1)
-        head, tail = os.path.split(path)
-        cd(ftp, head)
         with open(path, "rb") as f:
-            ftp.storbinary(f"STOR {tail}", f)
+            ftp.storbinary(f"STOR {path}", f)
 
 
-with ThreadPoolExecutor() as executor:
+with ThreadPoolExecutor() as executor, ftplib.FTP(host, user, password) as ftp:
+    ftp.set_debuglevel(1)
+
     def deploy(path: str):
         with os.scandir(path) as it:
             for entry in it:
                 if entry.is_dir():
-                    executor.submit(mkdir, entry.path)
+                    try:
+                        ftp.mkd(entry.path)
+                    except ftplib.error_perm as reason:
+                        if str(reason)[:3] != '550':
+                            raise
                     deploy(entry.path)
                 else:
                     executor.submit(put, entry.path)
