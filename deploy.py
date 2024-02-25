@@ -7,6 +7,8 @@ import ftplib
 import os
 import os.path
 
+from concurrent.futures import ThreadPoolExecutor
+
 credentials_path = os.path.join(os.environ["HOME"], ".qteam")
 
 # Try to create ~/.qteam
@@ -58,12 +60,13 @@ def put(path: str):
             ftp.storbinary(f"STOR {tail}", f)
 
 
-def deploy(path: str):
-    with os.scandir(path) as it:
-        for entry in it:
-            if entry.is_dir():
-                mkdir(entry.path)
-                deploy(entry.path)
-            else:
-                put(entry.path)
-deploy("www")
+with ThreadPoolExecutor() as executor:
+    def deploy(path: str):
+        with os.scandir(path) as it:
+            for entry in it:
+                if entry.is_dir():
+                    executor.submit(mkdir, entry.path)
+                    deploy(entry.path)
+                else:
+                    executor.submit(put, entry.path)
+    deploy("www")
