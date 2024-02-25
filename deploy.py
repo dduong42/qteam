@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Upload index.html to using the FTP server.
+Deploy using the FTP server.
 """
 import ftplib
 import os
